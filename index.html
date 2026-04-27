@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapitos</title>
+</head>
+
+<body style="text-align:center; font-family: sans-serif;">
+
+    <h1 id="title">Cargando...</h1>
+
+    <div id="container"></div>
+
+    <script>
+        // 1. Obtener el nombre desde la URL
+        const name = window.location.pathname
+            .replace("/", "")
+            .toLowerCase();
+
+        const title = document.getElementById("title");
+        const container = document.getElementById("container");
+
+        // 2. Validación básica
+        if (!name) {
+            title.innerText = "QR inválido o sin nombre";
+        } else {
+            title.innerText = "Sapito de " + name;
+
+            // 3. Crear audio dinámico
+            const audio = document.createElement("audio");
+            audio.controls = true;
+            audio.autoplay = true;
+
+            audio.src = `/audios/${name}.mp3`;
+
+            container.appendChild(audio);
+        }
+    </script>
+
+</body>
+
+</html>
