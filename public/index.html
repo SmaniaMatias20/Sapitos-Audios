@@ -14,33 +14,25 @@
     <div id="container"></div>
 
     <script>
-        // 1. Obtener nombre desde la URL de forma segura
-        const name = decodeURIComponent(
-            window.location.pathname
-                .replace("/", "")
-                .toLowerCase()
-                .trim()
-        );
+        const params = new URLSearchParams(window.location.search);
+        const name = (params.get("name") || "").toLowerCase();
 
         const title = document.getElementById("title");
         const container = document.getElementById("container");
 
-        // 2. Validación
         if (!name) {
-            title.innerText = "QR inválido o sin nombre";
+            title.innerText = "QR inválido";
         } else {
             title.innerText = "Sapito de " + name;
 
-            // 3. Crear audio dinámico
             const audio = document.createElement("audio");
             audio.controls = true;
             audio.autoplay = true;
 
             audio.src = `/audios/${name}.mp3`;
 
-            // 4. Manejo de error si no existe el audio
             audio.onerror = () => {
-                title.innerText = "No se encontró audio para: " + name;
+                title.innerText = "No existe audio para: " + name;
             };
 
             container.appendChild(audio);
