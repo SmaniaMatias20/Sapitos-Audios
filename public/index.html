@@ -35,7 +35,7 @@
         if (!name) {
             title.innerText = "QR inválido";
         } else {
-            title.innerText = "Audio de " + name;
+            title.innerText = "Audio de " + name.toUpperCase();
 
             const audio = document.createElement("audio");
             audio.controls = true;
