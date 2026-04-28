@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", "Arial", sans-serif;
+    background: linear-gradient(135deg, #fff7d6, #ffe4e6);
+    min-height: 100vh;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+.card {
+    background: #fffdf8;
+    border-radius: 28px;
+    padding: 48px 32px;
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+    border: 2px solid #fef3c7;
+}
+
+.icon {
+    font-size: 70px;
+    margin-bottom: 18px;
+}
+
+.title {
+    font-size: 2.1rem;
+    margin-bottom: 12px;
+    color: #92400e;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: #6b7280;
+    margin-bottom: 28px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.audio-container {
+    background: #fffaf0;
+    padding: 20px;
+    border-radius: 18px;
+    border: 1px solid #fde68a;
+}
+
+.audio-container audio {
+    width: 100%;
+    max-width: 350px;
+}
