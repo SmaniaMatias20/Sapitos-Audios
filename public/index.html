@@ -34,6 +34,28 @@
 
         if (!name) {
             title.innerText = "QR inválido";
+        }
+        else if (name == "adan") {
+            title.innerText = "Un recuerdo especial de ADAN";
+
+            const subtitle = document.getElementsByClassName("subtitle")[0];
+            subtitle.innerText = "";
+
+            const gallery = document.createElement("div");
+            gallery.className = "image-gallery";
+
+            const img1 = document.createElement("img");
+            img1.src = "/imagenes/1.jpeg";
+            img1.alt = "Foto 1 de Adán";
+
+            const img2 = document.createElement("img");
+            img2.src = "/imagenes/2.jpeg";
+            img2.alt = "Foto 2 de Adán";
+
+            gallery.appendChild(img1);
+            gallery.appendChild(img2);
+
+            container.appendChild(gallery);
         } else {
             title.innerText = "Audio de " + name.toUpperCase();
 
